@@ -29,11 +29,11 @@
 # Alternative to running the python scripts
 - If you would like to test producer and consumer roles directly, you can run these in 2 seperate terminals
 1. Follow steps 1-5 of above instructions
-2. In a new terminal start the producer with the command:
+2. In a new terminal start the consumer with the command:
     ```
     bin/kafka-console-consumer.sh --topic numtest --from-beginning --bootstrap-server localhost:9092
     ```
-3. In another teminal start the consumer with the command:
+3. In another teminal start the producer with the command:
     ```
     bin/kafka-console-producer.sh --topic numtest --bootstrap-server localhost:9092
     ```
