@@ -20,12 +20,15 @@ c.execute('CREATE TABLE IF NOT EXISTS collection (data json);')
 conn.commit()
 
 # look at messages then put in into sqlite db
-for message in consumer:
-    print(message)
-    print(message.value)
-    print(type(message.value))
+try:
+    for message in consumer:
 
-    c.execute('insert into collection values (?)', [message.value])
-    conn.commit()
+        print(message)
+        print('Key: {}, Value: {} at offset: {}\n'.format(message.key, message.value, message.offset))
+
+        c.execute('insert into collection values (?)', [message.value])
+        conn.commit()
+except Exception as e:
+    print(f'Unexpected error: {e}')
     
 conn.close()
