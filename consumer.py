@@ -12,6 +12,9 @@ consumer = KafkaConsumer(
 )
 # add this param to turn the messages into dictionaries
 # value_deserializer=lambda x: loads(x.decode('utf-8'))
+# note that you don't have to initially tie consumer to a topic(s)
+# you can subscribe to a topic(s) after set up with the line: 
+# consumer.subscribe(topics)
 
 # Sqlite3 connenction 
 conn = sqlite3.connect('test.db')
