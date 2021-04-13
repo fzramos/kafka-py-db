@@ -20,8 +20,8 @@
     ```
 6. Run producer program which adds messages to the numtest topic
 7. Run consumer program which reads the messages in the numtest topic and adds it to a database
-8. Shut down zookeeper by typing Ctrl+C on it's respective terminal
-9. Then run this command 
+8. Shut down Kafka Broker then Zookeeper by typing Ctrl+C on their respective terminal
+9. Then run this command to purge the logs
     ```
     rm -rf /tmp/kafka-logs /tmp/zookeeper
     ```
